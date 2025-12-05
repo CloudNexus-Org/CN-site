@@ -9,6 +9,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Company from "./pages/company";
 import Careers from "./pages/Careers";
+import ServicesPage from "./pages/Services";
+import ServicePage from "./pages/[slug]";
 import NotFound from "./pages/NotFound";
 import OurWorkHealth from "./pages/OurWorkHealth";
 import OurWorkFintech  from "./pages/OurWorkFintech";
@@ -27,9 +29,16 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/company" element={<Company />} />
           <Route path="/careers" element={<Careers />} />
+<<<<<<< HEAD
           <Route path="/OurWorkHealth" element={<OurWorkHealth />} />
           <Route path="/OurWorkFintech" element={<OurWorkFintech />} />
           <Route path="/OurWorkRetail" element={<OurWorkRetail />} />
+=======
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/:slug" element={<ServicePage />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+>>>>>>> origin/feature/company-page-update
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

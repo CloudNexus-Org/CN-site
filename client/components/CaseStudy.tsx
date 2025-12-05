@@ -418,18 +418,19 @@
 //   );
 // };
 
-
 "use client";
 import { useCallback, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const caseStudies = [
   {
     image: "/image/smart.jpeg",
     title: "Smart Healthcare Platform powered by AI & IoT",
     tag: "Healthcare",
+    page: "/OurWorkHealth", // ⭐ redirect to this page
     description:
       "We helped a leading healthcare provider build an intelligent platform leveraging AI & IoT to improve care outcomes and operational efficiency.",
     points: [
@@ -442,6 +443,7 @@ const caseStudies = [
     image: "/image/fintechh.jpeg",
     title: "FinTech Fraud Detection System",
     tag: "FinTech",
+    page: "/OurWorkFintech", // ⭐ redirect to fintech page
     description:
       "AI-driven fraud detection engine scanning millions of transactions in real time with adaptive learning.",
     points: [
@@ -454,6 +456,7 @@ const caseStudies = [
     image: "/image/retaill.jpeg",
     title: "AI Retail Demand Forecasting System",
     tag: "Retail",
+    page: "/OurWorkRetail", // ⭐ redirect to retail page
     description:
       "Demand forecasting engine predicting inventory needs using ML and seasonal analytics.",
     points: [
@@ -466,13 +469,16 @@ const caseStudies = [
 
 export const CaseStudy = () => {
   const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: false }));
-
   const [emblaRef, embla] = useEmblaCarousel({ loop: true }, [autoplay.current]);
+
   const scrollPrev = useCallback(() => embla?.scrollPrev(), [embla]);
   const scrollNext = useCallback(() => embla?.scrollNext(), [embla]);
 
   return (
-    <section id="our-work" className="py-24 px-6 bg-gradient-to-b from-[#07131A] via-[#0A1D26] to-[#002129] relative overflow-hidden">
+    <section
+      id="our-work"
+      className="py-24 px-6 bg-gradient-to-b from-[#07131A] via-[#0A1D26] to-[#002129] relative overflow-hidden"
+    >
 
       {/* Background Glow Effects */}
       <div className="absolute top-20 left-40 w-96 h-96 bg-[#00E5FF]/30 blur-[200px] rounded-full"></div>
@@ -537,9 +543,12 @@ export const CaseStudy = () => {
                         ))}
                       </div>
 
-                      <button className="flex items-center gap-2 px-8 py-3 bg-cyan-500/30 text-white font-semibold rounded-lg border border-cyan-400/30 hover:bg-cyan-400 hover:text-black transition-all duration-300">
-                        View Our Work <ArrowRight className="w-5 h-5" />
-                      </button>
+                      {/* ⭐ ROUTING BUTTON UPDATED */}
+                      <Link to={caseStudy.page}>
+                        <button className="flex items-center gap-2 px-8 py-3 bg-cyan-500/30 text-white font-semibold rounded-lg border border-cyan-400/30 hover:bg-cyan-400 hover:text-black transition-all duration-300">
+                          View Our Work <ArrowRight className="w-5 h-5" />
+                        </button>
+                      </Link>
                     </div>
 
                   </div>

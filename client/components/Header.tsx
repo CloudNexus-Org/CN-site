@@ -6,6 +6,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +60,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-3">
+          <div
+            className="flex-shrink-0 flex items-center gap-3 cursor-pointer"
+            onClick={() => {
+              navigate("/");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
   <img
     src="/logos/cnlogo.png"
     alt="CloudNexus Logo"
@@ -94,7 +101,10 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="px-6 py-2 bg-cn-blue text-white font-semibold rounded-lg hover:bg-blue-600 transition-all duration-300 hover:shadow-lg hover:shadow-cn-blue/50">
+            <button
+              onClick={() => handleNavClick("#contact")}
+              className="px-6 py-2 bg-cn-blue text-white font-semibold rounded-lg hover:bg-blue-600 transition-all duration-300 hover:shadow-lg hover:shadow-cn-blue/50"
+            >
               Contact Us
             </button>
           </div>
@@ -125,7 +135,10 @@ export default function Header() {
                   {item.label}
                 </button>
               ))}
-              <button className="w-full px-6 py-2 bg-cn-blue text-white font-semibold rounded-lg hover:bg-blue-600 transition-all duration-300 mt-4">
+              <button
+                onClick={() => handleNavClick("#contact")}
+                className="w-full px-6 py-2 bg-cn-blue text-white font-semibold rounded-lg hover:bg-blue-600 transition-all duration-300 mt-4"
+              >
                 Contact Us
               </button>
             </nav>

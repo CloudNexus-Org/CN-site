@@ -10,6 +10,10 @@ import Index from "./pages/Index";
 import Company from "./pages/company";
 import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
+import OurWorkHealth from "./pages/OurWorkHealth";
+import OurWorkFintech  from "./pages/OurWorkFintech";
+import OurWorkRetail  from "./pages/OurWorkRetail";
+import CaseStudies from "./pages/CaseStudies";
 
 const queryClient = new QueryClient();
 
@@ -23,8 +27,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/company" element={<Company />} />
           <Route path="/careers" element={<Careers />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="/OurWorkHealth" element={<OurWorkHealth />} />
+          <Route path="/OurWorkFintech" element={<OurWorkFintech />} />
+          <Route path="/OurWorkRetail" element={<OurWorkRetail />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

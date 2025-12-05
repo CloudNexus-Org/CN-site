@@ -1,7 +1,7 @@
 "use client";
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram, Youtube } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -146,66 +146,128 @@ export const Footer = () => {
       <motion.div className="absolute bottom-8 right-1/4 w-[250px] h-[250px] bg-[#FF00D4]/10 blur-[180px] rounded-full" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          {/* Company Info */}
-          <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold text-white mb-4">CloudNexus</h3>
-            <p className="text-gray-400 mb-6 max-w-md">
-              Empowering businesses with cutting-edge cloud solutions. From infrastructure to AI, we deliver scalable, secure, and innovative technology services.
+        {/* GRID SECTION (Logo + 3 Columns) */}
+        <div className="grid md:grid-cols-4 gap-14 mb-14">
+
+          {/* LEFT — Logo + Text Bar */}
+          <div className="bg-[#0D1524]/40 p-6 rounded-2xl border border-white/5">
+            <h3 className="text-3xl font-bold text-white tracking-wide">
+              Cloud<span className="text-cyan-400">Nexus</span>
+            </h3>
+            <p className="text-gray-400 mt-2 mb-6 max-w-sm">
+              Empowering businesses with modern, scalable cloud & AI innovation.
             </p>
-            <p className="text-cyan-400 font-semibold text-lg mb-4">
-              Do it fast.
-            </p>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-lg bg-[#0D1524]/50 flex items-center justify-center text-cyan-400 hover:bg-cyan-400/10 transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-[#0D1524]/50 flex items-center justify-center text-cyan-400 hover:bg-cyan-400/10 transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-[#0D1524]/50 flex items-center justify-center text-cyan-400 hover:bg-cyan-400/10 transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
+
+            {/* Message Bar */}
+            <div className="flex items-center bg-[#0D1524]/70 backdrop-blur-sm border border-white/10 rounded-xl p-1">
+              <input
+                type="text"
+                placeholder="Share your business problem..."
+                className="flex-1 bg-transparent outline-none text-gray-300 placeholder-gray-500 px-4 py-2 text-sm focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50 rounded-lg transition-all"
+              />
+              <button className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold hover:shadow-[0_0_20px_rgba(0,255,255,0.4)] transition-all hover:scale-105">
+                →
+              </button>
             </div>
           </div>
 
-          {/* Services */}
+          {/* SOLUTIONS */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Cloud Infrastructure</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Application Development</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Data Analytics</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">AI & Machine Learning</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Cybersecurity</a></li>
+            <h4 className="text-yellow-400 font-semibold mb-4 uppercase tracking-wide">
+              Solutions
+            </h4>
+            <ul className="space-y-3 text-gray-400">
+              <li>
+                <a href="/services" className="hover:text-cyan-400 transition">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="/payments" className="hover:text-cyan-400 transition">
+                  Payments
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* EXPLORE */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Terms of Service</a></li>
+            <h4 className="text-yellow-400 font-semibold mb-4 uppercase tracking-wide">
+              Explore
+            </h4>
+            <ul className="space-y-3 text-gray-400">
+              <li>
+                <a href="/case-studies" className="hover:text-cyan-400 transition">
+                  Case Studies
+                </a>
+              </li>
+              <li>
+                <a href="/service-catalog" className="hover:text-cyan-400 transition">
+                  Service Catalog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* ABOUT US */}
+          <div>
+            <h4 className="text-yellow-400 font-semibold mb-4 uppercase tracking-wide">
+              About Us
+            </h4>
+            <ul className="space-y-3 text-gray-400">
+              <li>
+                <a href="/company" className="hover:text-cyan-400 transition">
+                  Company
+                </a>
+              </li>
+              <li>
+                <a href="/privacy-policy" className="hover:text-cyan-400 transition">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-cyan-400 transition">
+                  Contact Us
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* SOCIAL + COPYRIGHT ROW */}
+        <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          
+          {/* LEFT COPYRIGHT */}
           <p className="text-gray-400 text-sm">
-            © 2024 CloudNexus. All rights reserved.
+            © CloudNexus 2025 | All Rights Reserved
           </p>
-          <div className="flex gap-6 text-sm text-gray-400">
-            <a href="#" className="hover:text-cyan-400 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">Terms</a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">Cookies</a>
+
+          {/* RIGHT SOCIAL ICONS */}
+          <div className="flex items-center gap-5">
+            <a className="text-white hover:text-cyan-400 transition cursor-pointer" href="https://www.linkedin.com/company/cloudnexusorg/">
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a className="text-white hover:text-cyan-400 transition cursor-pointer" href="https://www.instagram.com/cloudnexus.in?igsh=MXd3NW9mYm90NHMxNQ==">
+              <Instagram className="w-6 h-6" />
+            </a>
+            <a className="text-white hover:text-cyan-400 transition cursor-pointer">
+              <Youtube className="w-6 h-6" />
+            </a>
+            <a className="text-white hover:text-cyan-400 transition cursor-pointer">
+              <Facebook className="w-6 h-6" />
+            </a>
           </div>
         </div>
+
+        {/* SCROLL TO TOP BUTTON */}
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-8 right-8 w-14 h-14 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white/10 transition"
+        >
+          ↑
+        </button>
       </div>
     </footer>
   );
 };
+

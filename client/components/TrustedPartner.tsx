@@ -150,8 +150,7 @@ export default function TrustedPartner() {
             border border-white/15 backdrop-blur-xl"
             whileHover={{
               scale: 1.05,
-              brightness: 1.2,
-              filter: "contrast(1.1)",
+              filter: "brightness(1.2) contrast(1.1)",
             }}
             transition={{ duration: 0.4 }}
           />

@@ -151,8 +151,8 @@ export const Footer = () => {
 
           {/* LEFT — Logo + Text Bar */}
           <div className="bg-[#0D1524]/40 p-6 rounded-2xl border border-white/5">
-            <h3 className="text-3xl font-bold text-white tracking-wide">
-              Cloud<span className="text-cyan-400">Nexus</span>
+            <h3 className="text-3xl font-bold text-cyan-400 tracking-wide">
+              Cloud<span className="text-white">Nexus</span>
             </h3>
             <p className="text-gray-400 mt-2 mb-6 max-w-sm">
               Empowering businesses with modern, scalable cloud & AI innovation.

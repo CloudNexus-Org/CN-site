@@ -29,16 +29,13 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/company" element={<Company />} />
           <Route path="/careers" element={<Careers />} />
-<<<<<<< HEAD
           <Route path="/OurWorkHealth" element={<OurWorkHealth />} />
           <Route path="/OurWorkFintech" element={<OurWorkFintech />} />
           <Route path="/OurWorkRetail" element={<OurWorkRetail />} />
-=======
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:slug" element={<ServicePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
->>>>>>> origin/feature/company-page-update
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

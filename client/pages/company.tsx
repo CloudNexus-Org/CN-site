@@ -193,7 +193,7 @@ export default function Company() {
 
 
 
-
+ 
       <Footer />
     </main>
   );
